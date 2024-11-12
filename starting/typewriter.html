@@ -12,18 +12,18 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #111; /* Dark background to highlight neon colors */
+            background-color: #111;
         }
 
         .text-container {
             font-size: 3rem;
-            color: #00ffcc; /* Neon teal color */
+            color: #00ffcc;
             text-shadow: 
                 0 0 15px rgba(0, 255, 204, 0.8),
-                0 0 25px rgba(255, 0, 0, 0.7),  /* Neon red */
-                0 0 35px rgba(0, 255, 0, 0.7),  /* Neon green */
-                0 0 45px rgba(0, 0, 255, 0.7),  /* Neon blue */
-                0 0 55px rgba(255, 255, 0, 0.7); /* Neon yellow */
+                0 0 25px rgba(255, 0, 0, 0.7),
+                0 0 35px rgba(0, 255, 0, 0.7),
+                0 0 45px rgba(0, 0, 255, 0.7),
+                0 0 55px rgba(255, 255, 0, 0.7);
             position: relative;
             display: inline-block;
             margin-bottom: 20px;
@@ -43,13 +43,13 @@
         .buttons {
             display: flex;
             flex-direction: row;
-            gap: 10%;  /* Adjusted gap for better alignment */
+            gap: 10%;
             margin-top: 5%;
-            width: 60%; /* Limit container width */
+            width: 60%;
         }
         
         button {
-            flex: 1;  /* Make buttons equal in width */
+            flex: 1;
             color: black;
             padding: 15px 30px;
             border: none;
@@ -61,16 +61,15 @@
         }
         
         .info-button {
-            background-color: #ff007f;  /* Neon pink */
+            background-color: #ff007f;
             box-shadow: 0 0 15px rgba(255, 0, 127, 0.7);
         }
         
         .about-button {
-            background-color: #00ffcc;  /* Neon teal */
+            background-color: #00ffcc;
             box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
         }
         
-        /* Button hover effects */
         button:hover {
             transform: scale(1.1);
         }
@@ -89,9 +88,9 @@
             content: "";
             animation: changetext 7s infinite linear;
             color: orange;
-          }
+        }
           
-          @keyframes changetext {
+        @keyframes changetext {
             0% {
               content: "CLUB";
             }
@@ -107,17 +106,18 @@
             100% {
                 content:"GROUP";
             }
-          }
+        }
+        
         header{
-            position: fixed;  /* Keeps the header fixed at the top of the page */
-            top: 0;           /* Positions the header at the very top */
+            position: fixed;
+            top: 0;
             left: 0;
-            width: 100%;      /* Makes the header span across the entire width */
-            background-color: rgba(0, 0, 0, 0.7);  /* Optional: Adds a translucent background */
-            color: #fff;      /* White text color */
-            padding: 20px;    /* Adds padding around the text */
-            text-align: center; /* Centers the header text */
-            font-size: 1.5rem;  /* Adjust the font size */
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
             z-index: 10;  
         }
     </style>
@@ -127,16 +127,13 @@
         <h2>EXPLORE THIS AMAZING <kbd style="margin-top: -10px;"> | </kbd><kbd class="change_content"> </kbd> </h2>
     </header>
   <div class="container">
-    
     <div class="text-container">
         <div class="text" id="animated-text">
-            <!-- The text will be injected here dynamically -->
         </div>
     </div>
     <div class="buttons">
         <button class="info-button" onclick="window.location.href='work/index.html'">Explore</button>
         <button class="about-button" onclick="window.location.href='work/contact.html'">Question?</button>
-        
     </div>
   </div>
 
@@ -144,47 +141,40 @@
         const originalText = "STARTUP CELL JAMMU";
         const symbolSet = ['@', '#', '$', '%', '^'];
 
-        // Function to get a random symbol from the symbol set
         function getRandomSymbol() {
             return symbolSet[Math.floor(Math.random() * symbolSet.length)];
         }
 
-        // Function to animate individual letters
         function animateLetter(letterElement, originalLetter) {
             let currentLetter = originalLetter;
             let animationCount = 0;
 
-            // Create an array of random symbols for the animation
             const randomSymbols = [];
             for (let i = 0; i < 5; i++) {
                 randomSymbols.push(getRandomSymbol());
             }
 
-            // Change letter to 5 different random symbols, then revert to the original letter
             const animationInterval = setInterval(() => {
                 if (animationCount < 5) {
                     letterElement.textContent = randomSymbols[animationCount];
                     animationCount++;
                 } else {
                     letterElement.textContent = currentLetter;
-                    clearInterval(animationInterval);  // Stop after 5 changes
+                    clearInterval(animationInterval);
                 }
-            }, 400); // Change every 400ms (you can adjust this speed)
+            }, 400);
         }
 
-        // Function to display the original text and apply animation
         function displayTextWithAnimation() {
             const container = document.getElementById('animated-text');
-            container.innerHTML = '';  // Clear existing content
+            container.innerHTML = '';
 
-            // Loop through the string to add letters and spaces
             Array.from(originalText).forEach((letter, index) => {
                 const letterElement = document.createElement('span');
                 letterElement.classList.add('letter');
 
                 if (letter === ' ') {
-                    // Preserve space as it is (just add a space)
-                    letterElement.innerHTML = '&nbsp;'; // Using HTML entity for non-breaking space
+                    letterElement.innerHTML = '&nbsp;';
                 } else {
                     letterElement.textContent = letter;
                     setTimeout(() => animateLetter(letterElement, letter), 200 * index);
@@ -194,10 +184,8 @@
             });
         }
 
-        // Call the function to display and animate text
         displayTextWithAnimation();
 
-        // Optionally, repeat the animation after some time (e.g., every 4 seconds)
         setInterval(displayTextWithAnimation, 4000);
     </script>
 </body>

@@ -87,13 +87,11 @@
       document.addEventListener('DOMContentLoaded', () => {
         const typewriterElements = document.querySelectorAll('.typewriter');
     
-       
         const showCaret = (element) => {
             element.style.visibility = 'visible'; 
             element.style.animation += ', blink-caret 0.5s step-end infinite'; 
         };
     
-        
         setTimeout(() => {
             showCaret(typewriterElements[0]); 
         }, 0); 
@@ -106,9 +104,7 @@
             showCaret(typewriterElements[2]); 
         }, 6000); 
     
-        
         document.addEventListener('keydown', () => {
-            
             const modal = document.createElement('div');
             modal.style.position = 'fixed';
             modal.style.top = '50%';
@@ -124,13 +120,11 @@
             modal.innerText = "Entering the site...";
             document.body.appendChild(modal);
     
-            // Redirect after 1 second (1000ms) automatically
             setTimeout(() => {
-                window.location.href = "typewriter.html"; // Replace with the actual path
-            }, 1000); // 1 second delay before redirection
+                window.location.href = "typewriter.html"; 
+            }, 1000); 
         });
     });
-    
     </script>
-  </body>
+</body>
 </html>
