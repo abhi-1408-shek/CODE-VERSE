@@ -12,53 +12,137 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #000;
+            background-color: #111; /* Dark background to highlight neon colors */
         }
 
         .text-container {
             font-size: 3rem;
-            color: #fff;
-            font-weight: bold;
+            color: #00ffcc; /* Neon teal color */
+            text-shadow: 
+                0 0 15px rgba(0, 255, 204, 0.8),
+                0 0 25px rgba(255, 0, 0, 0.7),  /* Neon red */
+                0 0 35px rgba(0, 255, 0, 0.7),  /* Neon green */
+                0 0 45px rgba(0, 0, 255, 0.7),  /* Neon blue */
+                0 0 55px rgba(255, 255, 0, 0.7); /* Neon yellow */
             position: relative;
             display: inline-block;
+            margin-bottom: 20px;
         }
 
         .letter {
             display: inline-block;
             transition: all 0.1s ease;
         }
-        .buttons{
-          display: flex;
-          justify-content: center;
-          margin: 10%;
-          gap: 10%;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .buttons button{
-          padding: 5%;
-          width: 30%;
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 10%;  /* Adjusted gap for better alignment */
+            margin-top: 5%;
+            width: 60%; /* Limit container width */
         }
-        .container{
-          display: flex;
-          flex-direction: column;
+        
+        button {
+            flex: 1;  /* Make buttons equal in width */
+            color: black;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.8rem;
+            font-weight: 600;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+        }
+        
+        .info-button {
+            background-color: #ff007f;  /* Neon pink */
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.7);
+        }
+        
+        .about-button {
+            background-color: #00ffcc;  /* Neon teal */
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
+        }
+        
+        /* Button hover effects */
+        button:hover {
+            transform: scale(1.1);
+        }
+        
+        .info-button:hover {
+            box-shadow: 0 0 30px rgba(255, 0, 127, 1),
+                        0 0 50px rgba(255, 0, 127, 0.8);
+        }
+        
+        .about-button:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 204, 1),
+                        0 0 50px rgba(0, 255, 204, 0.8);
+        }
+        
+        .change_content:after {
+            content: "";
+            animation: changetext 7s infinite linear;
+            color: orange;
+          }
+          
+          @keyframes changetext {
+            0% {
+              content: "CLUB";
+            }
+            25% {
+              content: "SOCIETY";
+            }
+            50% {
+              content: "TEAM";
+            }
+            75% {
+              content: "COMMUNITY";
+            }
+            100% {
+                content:"GROUP";
+            }
+          }
+        header{
+            position: fixed;  /* Keeps the header fixed at the top of the page */
+            top: 0;           /* Positions the header at the very top */
+            left: 0;
+            width: 100%;      /* Makes the header span across the entire width */
+            background-color: rgba(0, 0, 0, 0.7);  /* Optional: Adds a translucent background */
+            color: #fff;      /* White text color */
+            padding: 20px;    /* Adds padding around the text */
+            text-align: center; /* Centers the header text */
+            font-size: 1.5rem;  /* Adjust the font size */
+            z-index: 10;  
         }
     </style>
 </head>
 <body>
+    <header>
+        <h2>EXPLORE THIS AMAZING <kbd style="margin-top: -10px;"> | </kbd><kbd class="change_content"> </kbd> </h2>
+    </header>
   <div class="container">
+    
     <div class="text-container">
         <div class="text" id="animated-text">
             <!-- The text will be injected here dynamically -->
         </div>
     </div>
-    <DIV class="buttons">
-      <button >Information</button>
-      <button>About us!</button>
-    </DIV>
+    <div class="buttons">
+        <button class="info-button" onclick="window.location.href='work/index.html'">Explore</button>
+        <button class="about-button" onclick="window.location.href='work/contact.html'">Question?</button>
+        
+    </div>
   </div>
 
     <script>
         const originalText = "STARTUP CELL JAMMU";
-        const symbolSet = ['@', '#', '$', '%', '^', '&', '*', '!', '?', '_', '-', '+'];
+        const symbolSet = ['@', '#', '$', '%', '^'];
 
         // Function to get a random symbol from the symbol set
         function getRandomSymbol() {
@@ -85,7 +169,7 @@
                     letterElement.textContent = currentLetter;
                     clearInterval(animationInterval);  // Stop after 5 changes
                 }
-            }, 200); // Change every 200ms (you can adjust this speed)
+            }, 400); // Change every 400ms (you can adjust this speed)
         }
 
         // Function to display the original text and apply animation
