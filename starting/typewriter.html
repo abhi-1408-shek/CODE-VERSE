@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Animation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+        }
+
+        .text-container {
+            font-size: 3rem;
+            color: #fff;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+        }
+
+        .letter {
+            display: inline-block;
+            transition: all 0.1s ease;
+        }
+        .buttons{
+          display: flex;
+          justify-content: center;
+          margin: 10%;
+          gap: 10%;
+        }
+        .buttons button{
+          padding: 5%;
+          width: 30%;
+        }
+        .container{
+          display: flex;
+          flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="text-container">
+        <div class="text" id="animated-text">
+            <!-- The text will be injected here dynamically -->
+        </div>
+    </div>
+    <DIV class="buttons">
+      <button >Information</button>
+      <button>About us!</button>
+    </DIV>
+  </div>
+
+    <script>
+        const originalText = "STARTUP CELL JAMMU";
+        const symbolSet = ['@', '#', '$', '%', '^', '&', '*', '!', '?', '_', '-', '+'];
+
+        // Function to get a random symbol from the symbol set
+        function getRandomSymbol() {
+            return symbolSet[Math.floor(Math.random() * symbolSet.length)];
+        }
+
+        // Function to animate individual letters
+        function animateLetter(letterElement, originalLetter) {
+            let currentLetter = originalLetter;
+            let animationCount = 0;
+
+            // Create an array of random symbols for the animation
+            const randomSymbols = [];
+            for (let i = 0; i < 5; i++) {
+                randomSymbols.push(getRandomSymbol());
+            }
+
+            // Change letter to 5 different random symbols, then revert to the original letter
+            const animationInterval = setInterval(() => {
+                if (animationCount < 5) {
+                    letterElement.textContent = randomSymbols[animationCount];
+                    animationCount++;
+                } else {
+                    letterElement.textContent = currentLetter;
+                    clearInterval(animationInterval);  // Stop after 5 changes
+                }
+            }, 200); // Change every 200ms (you can adjust this speed)
+        }
+
+        // Function to display the original text and apply animation
+        function displayTextWithAnimation() {
+            const container = document.getElementById('animated-text');
+            container.innerHTML = '';  // Clear existing content
+
+            // Loop through the string to add letters and spaces
+            Array.from(originalText).forEach((letter, index) => {
+                const letterElement = document.createElement('span');
+                letterElement.classList.add('letter');
+
+                if (letter === ' ') {
+                    // Preserve space as it is (just add a space)
+                    letterElement.innerHTML = '&nbsp;'; // Using HTML entity for non-breaking space
+                } else {
+                    letterElement.textContent = letter;
+                    setTimeout(() => animateLetter(letterElement, letter), 200 * index);
+                }
+
+                container.appendChild(letterElement);
+            });
+        }
+
+        // Call the function to display and animate text
+        displayTextWithAnimation();
+
+        // Optionally, repeat the animation after some time (e.g., every 4 seconds)
+        setInterval(displayTextWithAnimation, 4000);
+    </script>
+</body>
+</html>
