@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Runner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <div class="container">
+        <header>
+            <h1>Code Runner</h1>
+            <div class="controls">
+                <select id="languageSelect">
+                    <option value="javascript">JavaScript</option>
+                    <option value="html">HTML</option>
+                    <option value="c">C</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                </select>
+                <button id="runButton">Run Code</button>
+            </div>
+        </header>
+        <main>
+            <div class="editor-container">
+                <textarea id="codeEditor"></textarea>
+            </div>
+            <div class="output-container">
+                <h3>Output</h3>
+                <div id="output"></div>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.13.6/jshint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-validate/7.5.0/html-validate.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
