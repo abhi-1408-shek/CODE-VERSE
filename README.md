@@ -24,4 +24,4 @@
 Note: Use pip3 and python3 instead if using macOS.
 
 ## License:
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENCE) file for details.
