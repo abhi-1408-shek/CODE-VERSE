@@ -119,7 +119,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 👥 Contact
 
-Abhishek - [@your_twitter](https://twitter.com/your_twitter)
+Abhishek - [abhishek-sharma-gcet](https://www.linkedin.com/in/abhishek-sharma-gcet/)
 
 Project Link: [https://github.com/abhi-1408-shek/CODE-VERSE](https://github.com/abhi-1408-shek/CODE-VERSE)
 
