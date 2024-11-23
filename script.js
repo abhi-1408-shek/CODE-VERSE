@@ -29,12 +29,6 @@ const languageSelect = document.getElementById('languageSelect');
 const runButton = document.getElementById('runButton');
 const output = document.getElementById('output');
 
-// Create Check Code button with neon theme
-const checkButton = document.createElement('button');
-checkButton.textContent = 'Check Code';
-checkButton.className = 'btn check-btn';
-runButton.parentNode.insertBefore(checkButton, runButton);
-
 // Language Configurations
 const languageConfigs = {
     javascript: {
@@ -398,7 +392,6 @@ languageSelect.addEventListener('change', () => {
 });
 
 runButton.addEventListener('click', runCode);
-checkButton.addEventListener('click', checkCode);
 
 // Code Check Function
 function checkCode() {
