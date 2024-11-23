@@ -29,6 +29,12 @@ const languageSelect = document.getElementById('languageSelect');
 const runButton = document.getElementById('runButton');
 const output = document.getElementById('output');
 
+// Create Check Code button with neon theme
+const checkButton = document.createElement('button');
+checkButton.textContent = 'Check Code';
+checkButton.className = 'btn check-btn';
+runButton.parentNode.insertBefore(checkButton, runButton);
+
 // Language Configurations
 const languageConfigs = {
     javascript: {
@@ -305,7 +311,7 @@ const languageConfigs = {
             return errors;
         }
     },
-    c: {
+    'c++': {
         mode: "text/x-csrc",
         linter: function(code) {
             const errors = [];
@@ -392,6 +398,7 @@ languageSelect.addEventListener('change', () => {
 });
 
 runButton.addEventListener('click', runCode);
+checkButton.addEventListener('click', checkCode);
 
 // Code Check Function
 function checkCode() {
@@ -480,7 +487,7 @@ console.log(factorial(5));`,
     <p>This is a sample HTML page with styling.</p>
 </body>
 </html>`,
-        c: `#include <stdio.h>
+        'c++': `#include <iostream>
 
 int factorial(int n) {
     if (n == 0 || n == 1) return 1;
@@ -489,7 +496,7 @@ int factorial(int n) {
 
 int main() {
     int n = 5;
-    printf("Factorial of %d is %d\\n", n, factorial(n));
+    std::cout << "Factorial of " << n << " is " << factorial(n) << std::endl;
     return 0;
 }`,
         python: `def factorial(n):
@@ -558,15 +565,50 @@ function runCode() {
             `;
         }
     } else {
-        // For other languages, show the simulation message
+        // Show loading state
         output.innerHTML = `
             <div class="execution-result">
-                <h4>Execution:</h4>
-                <div class="message">
-                    Code execution is simulated. In a full environment, this would run your ${language} code.
-                </div>
+                <h4>Running ${language} code...</h4>
+                <div class="loading-spinner"></div>
             </div>
         `;
+
+        // Send code to backend for execution
+        fetch('http://localhost:5000/execute', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                language: language,
+                code: code
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            let resultHtml = `
+                <div class="execution-result">
+                    <h4>Output:</h4>
+            `;
+
+            if (data.error) {
+                resultHtml += `<pre class="error-message">${data.error}</pre>`;
+            }
+            if (data.output) {
+                resultHtml += `<pre class="output-content">${data.output}</pre>`;
+            }
+
+            resultHtml += `</div>`;
+            output.innerHTML = resultHtml;
+        })
+        .catch(error => {
+            output.innerHTML = `
+                <div class="execution-result error">
+                    <h4>Error:</h4>
+                    <pre class="error-message">Failed to connect to the backend server. Make sure it's running on port 5000.</pre>
+                </div>
+            `;
+        });
     }
 }
 

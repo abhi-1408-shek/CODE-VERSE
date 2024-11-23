@@ -35,6 +35,27 @@ def run_with_timeout(cmd, timeout_sec):
     finally:
         timer.cancel()
 
+def check_language_requirements():
+    requirements = {
+        'python': ('python3', '--version'),
+        'java': ('java', '--version'),
+        'c++': ('g++', '--version')
+    }
+    
+    available_languages = {}
+    
+    for lang, (cmd, arg) in requirements.items():
+        try:
+            subprocess.run([cmd, arg], capture_output=True, check=True)
+            available_languages[lang] = True
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            available_languages[lang] = False
+    
+    return available_languages
+
+# Get available languages on startup
+AVAILABLE_LANGUAGES = check_language_requirements()
+
 @app.route('/execute', methods=['POST'])
 def execute_code():
     try:
@@ -44,6 +65,18 @@ def execute_code():
 
         if not code:
             return jsonify({'error': 'No code provided'}), 400
+
+        if language not in AVAILABLE_LANGUAGES:
+            return jsonify({'error': f'Unsupported language: {language}'}), 400
+
+        if not AVAILABLE_LANGUAGES[language]:
+            return jsonify({
+                'error': f'Language {language} is not available on the server.\n' +
+                        f'Please install the required dependencies:\n' +
+                        f'- For Java: Install JDK from https://www.oracle.com/java/technologies/downloads/\n' +
+                        f'- For C++: Install g++ compiler\n' +
+                        f'- For Python: Install Python 3'
+            }), 400
 
         result = {'output': '', 'error': '', 'exitCode': 0}
 
@@ -99,9 +132,6 @@ def execute_code():
             finally:
                 cleanup_temp_file(filename)
                 cleanup_temp_file(output_file)
-
-        else:
-            return jsonify({'error': f'Unsupported language: {language}'}), 400
 
         return jsonify(result)
 

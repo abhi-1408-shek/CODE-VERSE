@@ -643,6 +643,23 @@ main {
     box-shadow: 0 0 20px rgba(0, 255, 255, 0.4) !important;
 }
 
+/* Loading Spinner */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    border: 3px solid var(--neon-primary);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* Footer */
 footer {
     text-align: center;
