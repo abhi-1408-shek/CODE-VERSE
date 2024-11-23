@@ -3,32 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CODE-VERSE | Modern Code Runner</title>
+    <title>CODE-VERSE Editor</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
-    <nav>
+    <nav class="glass-nav">
         <div class="nav-content container">
-            <div class="logo">CODE-VERSE</div>
+            <div class="logo">
+                <span class="logo-text">
+                    <span class="code-text">CODE</span>
+                    <span class="verse-text">VERSE</span>
+                </span>
+            </div>
             <div class="nav-links">
-                <a href="#" class="active">Code Editor</a>
-                <a href="#">Documentation</a>
-                <a href="#">About</a>
+                <a href="index.html" class="active">Editor</a>
+                <a href="pages/documentation.html">Documentation</a>
+                <a href="pages/about.html">About</a>
             </div>
         </div>
     </nav>
     
     <div class="container">
         <div class="hero">
-            <h1>Modern Code Runner</h1>
-            <p>Write, run, and test your code in a sleek, futuristic environment</p>
+            <h1>A solution to all Code Runner Problems</h1>
+            <p>Write, run, and test your code !</p>
         </div>
         
         <main>
+            <div class="welcome-container">
+                <span class="welcome-text">Welcome! Write code for</span>
+                <div class="glitch-text" data-text="HTML">HTML</div>
+            </div>
+            
             <div class="controls">
                 <select id="languageSelect" class="neon-select">
                     <option value="javascript">JavaScript</option>
@@ -38,6 +51,18 @@
                     <option value="java">Java</option>
                 </select>
                 <button id="runButton" class="btn">Run Code</button>
+            </div>
+            
+            <div class="snippets-panel" id="snippetsPanel">
+                <button class="snippets-toggle" id="snippetsToggle">
+                    <i class="fas fa-code"></i>
+                </button>
+                <div class="snippets-content">
+                    <h3>Code Snippets</h3>
+                    <div class="snippets-list" id="snippetsList">
+                        <!-- Snippets will be dynamically populated -->
+                    </div>
+                </div>
             </div>
             
             <div class="editor-container">
@@ -52,16 +77,27 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 CODE-VERSE. All rights reserved.</p>
+        <p>&copy; NAMASTECH TECHNOLOGIES | All rights reserved.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+ 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.13.6/jshint.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-validate/7.5.0/html-validate.min.js"></script>
     <script src="script.js"></script>
+    <script>
+       
+        const glitchText = document.querySelector('.glitch-text');
+        const languages = ['HTML', 'PYTHON', 'JAVASCRIPT', 'JAVA', 'C++'];
+        let currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % languages.length;
+            glitchText.textContent = languages[currentIndex];
+            glitchText.setAttribute('data-text', languages[currentIndex]);
+        }, 2000);
+    </script>
 </body>
 </html>

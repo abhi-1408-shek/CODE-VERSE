@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - CODE-VERSE</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js"></script>
+</head>
+<body>
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="logo-text">
+                    <span class="code-text">CODE</span>
+                    <span class="verse-text">VERSE</span>
+                </span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Editor</a>
+                <a href="documentation.html" class="active">Documentation</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="documentation-container">
+        <aside class="doc-sidebar glass-panel">
+            <nav class="doc-nav">
+                <a href="#getting-started" class="doc-nav-item active">Getting Started</a>
+                <a href="#features" class="doc-nav-item">Features</a>
+                <a href="#languages" class="doc-nav-item">Supported Languages</a>
+                <a href="#code-checking" class="doc-nav-item">Code Checking</a>
+                <a href="#shortcuts" class="doc-nav-item">Keyboard Shortcuts</a>
+                <a href="#examples" class="doc-nav-item">Examples</a>
+            </nav>
+        </aside>
+
+        <div class="doc-content glass-panel">
+            <section id="getting-started" class="doc-section">
+                <h1 class="glow-text">Getting Started with CODE-VERSE</h1>
+                <div class="feature-card">
+                    <h2>Quick Start Guide</h2>
+                    <div class="steps-container">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <p>Select your programming language from the dropdown menu</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <p>Write or paste your code in the editor</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <p>Click "Run" to execute your code or "Check" to validate it</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features" class="doc-section">
+                <h2 class="glow-text">Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Syntax Highlighting</h3>
+                        <p>Real-time syntax highlighting for all supported languages</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-bug"></i>
+                        <h3>Error Detection</h3>
+                        <p>Advanced error detection and suggestions</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Responsive Design</h3>
+                        <p>Works seamlessly on all devices</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-keyboard"></i>
+                        <h3>Keyboard Shortcuts</h3>
+                        <p>Efficient coding with keyboard shortcuts</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="languages" class="doc-section">
+                <h2 class="glow-text">Supported Languages</h2>
+                <div class="language-showcase">
+                    <div class="central-card">
+                        <div class="card-content">
+                            <h3>CODE-VERSE</h3>
+                            <div class="card-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <div class="connection-lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="language-cards">
+                        <div class="lang-card" data-lang="js">
+                            <div class="card-content">
+                                <h3>JavaScript</h3>
+                                <div class="card-icon">
+                                    <i class="fab fa-js"></i>
+                                </div>
+                                <div class="card-features">
+                                    <span>ES6+</span>
+                                    <span>Node.js</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lang-card" data-lang="python">
+                            <div class="card-content">
+                                <h3>Python</h3>
+                                <div class="card-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="card-features">
+                                    <span>Python 3</span>
+                                    <span>Libraries</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lang-card" data-lang="java">
+                            <div class="card-content">
+                                <h3>Java</h3>
+                                <div class="card-icon">
+                                    <i class="fab fa-java"></i>
+                                </div>
+                                <div class="card-features">
+                                    <span>JDK 11+</span>
+                                    <span>Enterprise</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lang-card" data-lang="cpp">
+                            <div class="card-content">
+                                <h3>C/C++</h3>
+                                <div class="card-icon">
+                                    <i class="fas fa-cogs"></i>
+                                </div>
+                                <div class="card-features">
+                                    <span>C++17</span>
+                                    <span>STL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lang-card" data-lang="html">
+                            <div class="card-content">
+                                <h3>HTML</h3>
+                                <div class="card-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="card-features">
+                                    <span>HTML5</span>
+                                    <span>Modern</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="code-checking" class="doc-section">
+                <h2 class="glow-text">Code Checking Features</h2>
+                <div class="feature-cards">
+                    <div class="feature-card syntax">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Syntax Validation</h3>
+                        <div class="feature-details">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Real-time error detection</li>
+                                <li><i class="fas fa-check"></i> Language-specific rules</li>
+                                <li><i class="fas fa-check"></i> Instant feedback</li>
+                            </ul>
+                        </div>
+                        <div class="feature-status">
+                            <span class="status-badge active">
+                                <i class="fas fa-circle"></i> Active
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="feature-card style">
+                        <div class="feature-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3>Style Analysis</h3>
+                        <div class="feature-details">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Code formatting</li>
+                                <li><i class="fas fa-check"></i> Best practices</li>
+                                <li><i class="fas fa-check"></i> Style guide compliance</li>
+                            </ul>
+                        </div>
+                        <div class="feature-status">
+                            <span class="status-badge active">
+                                <i class="fas fa-circle"></i> Active
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="feature-card semantic">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Semantic Analysis</h3>
+                        <div class="feature-details">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Logic verification</li>
+                                <li><i class="fas fa-check"></i> Variable usage</li>
+                                <li><i class="fas fa-check"></i> Control flow</li>
+                            </ul>
+                        </div>
+                        <div class="feature-status">
+                            <span class="status-badge beta">
+                                <i class="fas fa-circle"></i> Beta
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="feature-card security">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security Scanning</h3>
+                        <div class="feature-details">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Vulnerability detection</li>
+                                <li><i class="fas fa-check"></i> Security best practices</li>
+                                <li><i class="fas fa-check"></i> Risk assessment</li>
+                            </ul>
+                        </div>
+                        <div class="feature-status">
+                            <span class="status-badge coming">
+                                <i class="fas fa-circle"></i> Coming Soon
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="feature-card performance">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>Performance Analysis</h3>
+                        <div class="feature-details">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Complexity checks</li>
+                                <li><i class="fas fa-check"></i> Resource usage</li>
+                                <li><i class="fas fa-check"></i> Optimization tips</li>
+                            </ul>
+                        </div>
+                        <div class="feature-status">
+                            <span class="status-badge coming">
+                                <i class="fas fa-circle"></i> Coming Soon
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="feature-card integration">
+                        <div class="feature-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <h3>Integration Checks</h3>
+                        <div class="feature-details">
+                            <ul>
+                                <li><i class="fas fa-check"></i> API compatibility</li>
+                                <li><i class="fas fa-check"></i> Module dependencies</li>
+                                <li><i class="fas fa-check"></i> Version control</li>
+                            </ul>
+                        </div>
+                        <div class="feature-status">
+                            <span class="status-badge beta">
+                                <i class="fas fa-circle"></i> Beta
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="shortcuts" class="doc-section">
+                <h2 class="glow-text">Keyboard Shortcuts</h2>
+                <div class="shortcuts-grid">
+                    <div class="shortcut-card">
+                        <kbd>Ctrl</kbd> + <kbd>Enter</kbd>
+                        <span>Run Code</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <kbd>Ctrl</kbd> + <kbd>S</kbd>
+                        <span>Check Code</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <kbd>Ctrl</kbd> + <kbd>/</kbd>
+                        <span>Toggle Comment</span>
+                    </div>
+                    <div class="shortcut-card">
+                        <kbd>Ctrl</kbd> + <kbd>Z</kbd>
+                        <span>Undo</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="examples" class="doc-section">
+                <h2 class="glow-text">Code Examples</h2>
+                <div class="examples-container">
+                    <div class="example-card">
+                        <h3>Python Example</h3>
+                        <pre><code class="language-python">
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("World"))
+                        </code></pre>
+                    </div>
+                    <div class="example-card">
+                        <h3>JavaScript Example</h3>
+                        <pre><code class="language-javascript">
+function factorial(n) {
+    return n <= 1 ? 1 : n * factorial(n - 1);
+}
+
+console.log(factorial(5));
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CODE-VERSE | All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize Mermaid diagrams
+        mermaid.initialize({ 
+            theme: 'dark',
+            themeVariables: {
+                darkMode: true,
+                background: '#111',
+                primaryColor: '#0ff',
+                secondaryColor: '#f0f',
+                tertiaryColor: '#fff',
+                primaryTextColor: '#fff',
+                secondaryTextColor: '#fff',
+                lineColor: '#0ff',
+                fontSize: '14px',
+                fontFamily: 'Orbitron'
+            },
+            flowchart: {
+                curve: 'basis',
+                padding: 50,
+                nodeSpacing: 100,
+                rankSpacing: 100,
+                htmlLabels: true,
+                diagramPadding: 30,
+                useMaxWidth: false
+            }
+        });
+
+        // Smooth scrolling for documentation navigation
+        document.querySelectorAll('.doc-nav-item').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Active section highlighting
+        const sections = document.querySelectorAll('.doc-section');
+        const navItems = document.querySelectorAll('.doc-nav-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').substring(1) === current) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

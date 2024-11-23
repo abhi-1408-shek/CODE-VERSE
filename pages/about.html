@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - CODE-VERSE</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="logo-text">
+                    <span class="code-text">CODE</span>
+                    <span class="verse-text">VERSE</span>
+                </span>
+            </div>
+            <div class="nav-links">
+                <a href="../index.html">Editor</a>
+                <a href="documentation.html">Documentation</a>
+                <a href="about.html" class="active">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="about-container">
+        <section class="hero-section glass-panel">
+            <h1 class="glow-text">Welcome to CODE-VERSE</h1>
+            <p class="subtitle">A Next-Generation Online Code Editor</p>
+            <div class="animated-code">
+                <pre><code>
+while (true) {
+    code.write();
+    knowledge.expand();
+    skills.improve();
+}
+                </code></pre>
+            </div>
+        </section>
+
+        <section class="mission-section glass-panel">
+            <h2 class="glow-text">Our Mission</h2>
+            <div class="mission-content">
+                <div class="mission-text">
+                    <p>CODE-VERSE is designed to empower developers with a powerful, intuitive coding environment that combines modern features with a beautiful interface. Our goal is to make coding more accessible, efficient, and enjoyable for everyone.</p>
+                </div>
+                <div class="mission-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="5">0</div>
+                        <div class="stat-label">Languages Supported</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">Code Checks</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="24">0</div>
+                        <div class="stat-label">Hour Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-timeline glass-panel">
+            <h2 class="glow-text">Evolution Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2023 Q4</h3>
+                        <p>Launch of CODE-VERSE with basic editor features</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2024 Q1</h3>
+                        <p>Advanced code checking and multiple language support</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>2024 Q2</h3>
+                        <p>Real-time collaboration features coming soon</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section glass-panel">
+            <h2 class="glow-text">Meet the Team</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="../assets/team/lead-dev.jpg" alt="Lead Developer">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Anubhav Dubey</h3>
+                        <span class="role">Lead Developer</span>
+                        <p>Full-stack developer with expertise in modern web technologies and system architecture.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="../assets/team/designer.jpg" alt="UI/UX Designer">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Aastha Trivedi</h3>
+                        <span class="role">UI/UX Designer</span>
+                        <p>Creative designer focused on crafting intuitive and beautiful user experiences.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="member-image">
+                        <img src="../assets/team/backend.jpg" alt="Backend Engineer">
+                        <div class="image-overlay"></div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Abhishek</h3>
+                        <span class="role">Backend Engineer</span>
+                        <p>Systems architect specializing in scalable backend solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section glass-panel">
+            <h2 class="glow-text">Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>code.verse.gcet@gmail.com</p>
+                </div>
+                
+                <div class="contact-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>github.com/abhi-1408-shek</p>
+                    <p>github.com/syntaxeclipse</p>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>INDIA, EARTH</p>
+                </div>
+            </div>
+
+            <div class="contact-message">
+                <p>Have questions or suggestions? We'd love to hear from you!</p>
+                <p>Feel free to reach out through any of the channels above.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CODE-VERSE | All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate stats
+        function animateStats() {
+            const stats = document.querySelectorAll('.stat-number');
+            stats.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-target'));
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    stat.textContent = Math.floor(current);
+                    if (current >= target) {
+                        stat.textContent = target;
+                        clearInterval(timer);
+                    }
+                }, 40);
+            });
+        }
+
+        // Timeline animation
+        gsap.from('.timeline-item', {
+            scrollTrigger: {
+                trigger: '.timeline',
+                start: 'top center',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.3,
+            duration: 1
+        });
+
+        // Team members animation
+        gsap.from('.team-card', {
+            scrollTrigger: {
+                trigger: '.team-grid',
+                start: 'top center',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            y: 30,
+            stagger: 0.2,
+            duration: 0.8
+        });
+
+        // Contact cards animation
+        gsap.from('.contact-card', {
+            scrollTrigger: {
+                trigger: '.contact-grid',
+                start: 'top center',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 0,
+            scale: 0.8,
+            stagger: 0.2,
+            duration: 0.8
+        });
+
+        // Trigger stats animation when mission section is in view
+        ScrollTrigger.create({
+            trigger: '.mission-stats',
+            start: 'top center',
+            onEnter: () => animateStats()
+        });
+
+        // Animated code typing effect
+        const codeElement = document.querySelector('.animated-code code');
+        const originalCode = codeElement.innerHTML;
+        codeElement.innerHTML = '';
+        let i = 0;
+
+        function typeCode() {
+            if (i < originalCode.length) {
+                codeElement.innerHTML += originalCode.charAt(i);
+                i++;
+                setTimeout(typeCode, 50);
+            }
+        }
+
+        // Start typing animation when page loads
+        window.addEventListener('load', typeCode);
+    </script>
+</body>
+</html>
