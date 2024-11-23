@@ -119,9 +119,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 👥 Contact
 
-Abhishek - [abhishek-sharma-gcet](https://www.linkedin.com/in/abhishek-sharma-gcet/)
+Abhishek - [LinkedIn](https://www.linkedin.com/in/abhishek-sharma-gcet/)
 
-Project Link: [https://github.com/abhi-1408-shek/CODE-VERSE](https://github.com/abhi-1408-shek/CODE-VERSE)
+Project Link: [CLICK HERE ! ](https://github.com/abhi-1408-shek/CODE-VERSE)
 
 ---
 
