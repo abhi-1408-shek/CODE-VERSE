@@ -91,7 +91,6 @@ const languageConfigs = {
                         });
                     }
                 });
-
                 // Check for unclosed tags
                 const openTags = [];
                 const tagPattern = /<\/?([a-z0-9]+)[^>]*>/gi;
