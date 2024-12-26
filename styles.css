@@ -33,7 +33,7 @@ body {
     padding: 0 2rem;
 }
 
-/* Enhanced Navbar */
+
 .glass-nav {
     position: fixed;
     top: 0;
@@ -148,7 +148,7 @@ main {
     z-index: 1;
 }
 
-/* Hero Section */
+
 .hero {
     text-align: center;
     padding: 4rem 0;
@@ -172,7 +172,6 @@ main {
     letter-spacing: 2px;
 }
 
-/* Welcome Container */
 .welcome-container {
     display: flex;
     align-items: center;
@@ -381,12 +380,11 @@ main {
     }
 }
 
-/* Remove old welcome message styles */
 .welcome-message {
     display: none;
 }
 
-/* Controls Section */
+
 .controls {
     display: flex;
     justify-content: center;
@@ -660,7 +658,7 @@ main {
     }
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     padding: 2rem 0;
@@ -680,7 +678,7 @@ footer p {
     padding: 0 1rem;
 }
 
-/* Responsive Footer */
+
 @media screen and (max-width: 768px) {
     footer {
         padding: 1.5rem 0;
@@ -703,7 +701,6 @@ footer p {
     }
 }
 
-/* For very small devices */
 @media screen and (max-width: 320px) {
     footer p {
         font-size: 0.7rem;
@@ -711,7 +708,6 @@ footer p {
     }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .nav-content {
         flex-direction: column;
