@@ -53,7 +53,6 @@ def check_language_requirements():
     
     return available_languages
 
-# Get available languages on startup
 AVAILABLE_LANGUAGES = check_language_requirements()
 
 @app.route('/execute', methods=['POST'])
