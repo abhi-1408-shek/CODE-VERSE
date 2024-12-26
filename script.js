@@ -21,7 +21,6 @@ let editor = CodeMirror.fromTextArea(document.getElementById("codeEditor"), {
         }
     }
 });
-
 editor.setSize("100%", "400px");
 
 // DOM Elements
